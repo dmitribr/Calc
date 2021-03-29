@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Калькулятор</title>
+</head>
+<body>
+	<input type="number" id="one">
+		<select id="all_option">
+			<option value="+"> + </option>
+			<option value="-"> - </option>
+			<option value="*"> * </option>
+			<option value="/"> / </option>
+		</select>
+	<input type="number" id="two">
+	<input type="submit" id="sub" value="=">
+		<h2 id="result" style="display: inline; font-family: monospace;"></h2>
+	<script>
+		const numberOne = document.getElementById('one');
+		const option = document.getElementById('all_option');
+		const numberTwo = document.getElementById('two');
+		const downSubmit = document.getElementById('sub');
+		const result = document.getElementById('result');
+		function calc () {
+			if (option.value === '+') {
+				let turn = Number(numberOne.value) + Number(numberTwo.value);
+				result.textContent = turn;
+			} else if (option.value === '-') {
+				let turn = numberOne.value - numberTwo.value;
+				result.textContent = turn;
+			} else if (option.value === '*') {
+				let turn = numberOne.value * numberTwo.value;
+				result.textContent = turn;
+			} else {
+				let turn = numberOne.value / numberTwo.value;
+				result.textContent = turn;
+			}
+		};
+		downSubmit.addEventListener('click', calc, false);
+	</script>
+</body>
+</html>
